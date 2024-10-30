@@ -11,13 +11,6 @@ try:
 except:
     TRACELEVEL="DONT"
 
-try:
-    from ib_async.wrapper import RequestError
-    from ibflex.client import BadResponseError
-except:
-    default_not_detailed_errors = [
-        ConnectionRefusedError,TimeoutError,ValueError,NotImplementedError]
-
 default_not_detailed_errors = []
 
 # don't import config here

@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "commonpy"
+version = "1.0.0"
+description = "common hacks in python"
+authors = [
+    { name = "eyal karni", email = "eyalk5@gmail.com" }
+]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["."]
