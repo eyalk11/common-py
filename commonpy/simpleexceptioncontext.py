@@ -35,6 +35,23 @@ def get_caller_info(over):
 
 
 class SimpleExceptionContext:
+    """
+    A context manager for handling exceptions in a simplified manner.
+
+    Attributes:
+        err_description (str): Description of the error context.
+        return_succ: Value to return on success.
+        never_throw (bool): If True, suppress all exceptions.
+        always_throw (bool): If True, always raise exceptions.
+        debug (bool): If True, enable debug mode.
+        detailed (bool): If True, provide detailed error information.
+        err_to_ignore (list): List of exceptions to ignore.
+        callback (callable): Function to call on exception.
+        noconfig (bool): If True, do not use configuration.
+        caller: Caller information.
+        logf: Logger function.
+        always_print (bool): If True, always print exceptions.
+    """
     ISWING=None
 
     def __init__(self, err_description=None,return_succ=None,never_throw=False,always_throw=False,debug=False,detailed=True,err_to_ignore=[],callback=None,noconfig=False,caller=None,logf=None,always_print=False):
@@ -148,6 +165,25 @@ def excp_handler(exc_type,handler=lambda a,b: None):
     return decorated
 
 def simple_exception_handling(err_description=None,return_succ='undef',never_throw=False,always_throw=False,debug=False,detailed=True,err_to_ignore=[],callback=None,noconfig=False,logf=None,always_print=False):
+    """
+    A decorator for handling exceptions in a simplified manner within a function.
+
+    Parameters:
+        err_description (str): Description of the error context.
+        return_succ: Value to return on success or when no exception occurs.
+        never_throw (bool): If True, suppress all exceptions.
+        always_throw (bool): If True, always raise exceptions.
+        debug (bool): If True, enable debug mode.
+        detailed (bool): If True, provide detailed error information.
+        err_to_ignore (list): List of exceptions to ignore.
+        callback (callable): Function to call on exception.
+        noconfig (bool): If True, do not use configuration.
+        logf: Logger function.
+        always_print (bool): If True, always print exceptions.
+
+    Returns:
+        The decorated function with exception handling applied.
+    """
     def decorated(func):
         caller = get_caller_info(2)
         def internal(*args,**kwargs):
