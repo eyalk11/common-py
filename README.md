@@ -39,7 +39,7 @@ In this example , a callback is called when the exception occurs.
 def get_symbol_history(sym, startdate, enddate, iscrypto=False):
     # Your code to fetch symbol history here
     pass 
-
+```
 ### Example 3: Date and Time Utilities
 
 ```python
