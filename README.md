@@ -12,7 +12,11 @@ My common Python hacks
 ## Installation
 To install the required dependencies, use:
 ```bash
-pip install common-py 
+pip install ekcommon  
+```
+To use: 
+```
+from commonpy import * 
 ```
 
 ## Usage

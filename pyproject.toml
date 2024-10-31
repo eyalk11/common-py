@@ -3,13 +3,20 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "commonpy"
+name = "ekcommon"
 version = "1.0.0"
-description = "common hacks in python"
+description = "Common hacks in python."
+classifiers = [
+"License :: OSI Approved :: MIT License",
+"Programming Language :: Python",
+"Programming Language :: Python :: 3",
+]
+readme = "README.md"
+
 authors = [
     { name = "eyal karni", email = "eyalk5@gmail.com" }
 ]
-dependencies = []
+dependencies = ["Pyro5"]
 
 [tool.setuptools.packages.find]
 where = ["."]
