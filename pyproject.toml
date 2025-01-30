@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ekcommon"
-version = "1.0.0"
+version = "1.0.1"
 description = "Common hacks in python."
 classifiers = [
 "License :: OSI Approved :: MIT License",
@@ -16,7 +16,7 @@ readme = "README.md"
 authors = [
     { name = "eyal karni", email = "eyalk5@gmail.com" }
 ]
-dependencies = ["Pyro5"]
+dependencies = ["Pyro5", "pytz"]
 
 [tool.setuptools.packages.find]
 where = ["."]

@@ -2,6 +2,12 @@ import logging
 import os
 import re
 
+def never_throw(f,*args,default=None,**kwargs):
+    try:
+        return f(*args,**kwargs)
+    except:
+        return default
+
 class MyFormatter(logging.Formatter):
     log_format = 'Run %(run_number)s | %(asctime)s | %(filename)s:%(lineno)d:%(function)s | %(levelname)s | %(message)s'
     run_number=None
